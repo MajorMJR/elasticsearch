@@ -5,7 +5,7 @@ FROM rpidockers/java:1.8.0_60
 
 # Install elasticsearch
 ENV ES_CONFIG_PATH /data/config/elasticsearch.yml 
-ENV ES_VERSION 1.7.1
+ENV ES_VERSION 1.7.1 
 RUN \
   cd /tmp && \
   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-$ES_VERSION.tar.gz && \
@@ -15,14 +15,14 @@ RUN \
   ln -s /opt/elasticsearch-$ES_VERSION /opt/elasticsearch
 
 # Install plugins
-RUN \
-  cd /opt/elasticsearch/bin && \
-  ./plugin --install royrusso/elasticsearch-HQ && \
-  ./plugin --install mobz/elasticsearch-head && \
-  ./plugin --install karmi/elasticsearch-paramedic && \
-  ./plugin --install lukas-vlcek/bigdesk && \
-  ./plugin --install jettro/elasticsearch-gui && \
-  ./plugin --install lmenezes/elasticsearch-kopf
+#RUN \
+#  cd /opt/elasticsearch/bin && \
+  #./plugin install royruss#./elasticsearch-HQ && \
+  #./plugin install mob#./elasticsearch-head && \
+  #./plugin install karm#./elasticsearch-paramedic && \
+  #./plugin install lukas-vlce#./bigdesk && \
+  #./plugin install jettr#./elasticsearch-gui && \
+  #./plugin install lmeneze#./elasticsearch-kopf
 
 # Basic configuration
 ENV ES_CLUSTER_NAME elasticsearch
